@@ -19,8 +19,6 @@ sentry_sdk.init("https://0a25597acfe14df393473c646db3e241@sentry.io/1476292",#DS
                 before_breadcrumb=before_breadcrumb_func#定制breadcrumb
                 )
 
-def count(n):
-    return n * n
 def test_func_stack():
     test_next_stack()
 #testValue=1/0
@@ -30,10 +28,4 @@ except Exception as e:
     # Alternatively the argument can be omitted
     capture_exception(e)
 
-#如果用户进行身份验证或发生其他状态更改，则记录面包屑可能是有意义的。
-add_breadcrumb(
-    category='auth',
-    message='Authenticated user%',
-    level='info',
-)
 
